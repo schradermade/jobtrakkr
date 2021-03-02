@@ -69,7 +69,6 @@ class App extends Component {
         <td><Button className='btn btn-lg btn-info' onClick={() => this.remove(job.id)}> <FontAwesomeIcon icon={faMoneyCheckAlt} /> No Response </Button></td>
         <td><Button className='btn btn-lg btn-warning' onClick={() => this.remove(job.id)}> <FontAwesomeIcon icon={faSearchDollar} /> ??? </Button></td>
         <td><Button className='btn btn-lg btn-info' onClick={() => this.redirect(job.id)}> <FontAwesomeIcon icon={faFileContract} /> Job Posting </Button></td>
-        
       </tr>
     )
 
@@ -84,12 +83,14 @@ class App extends Component {
           <div className='col-xs-12 center text-center'>
             <Table dark responsive striped bordered hover>
               <thead>
-                <th>Company Name</th>
-                <th>Position</th>
-                <th>Location</th>
-                <th>Work From</th>
-                <th colSpan='4'>Actions</th>
-                <th>Job Posting</th>
+                <tr>
+                  <th>Company Name</th>
+                  <th>Position</th>
+                  <th>Location</th>
+                  <th>Work From</th>
+                  <th colSpan='4'>Actions</th>
+                  <th>Job Posting</th>
+                </tr>
               </thead>
 
               <tbody>
