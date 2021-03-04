@@ -100,7 +100,6 @@ class App extends Component {
         <div>Loading...</div>
       );
     }
-    <h1>jobtrakkr - a place to track your job applications.</h1>
     // Applied jobs - No Response
     let jobs = 
     allJobs.map(job => {
@@ -159,14 +158,16 @@ class App extends Component {
     return ( 
       <>
         {/* Applied jobs - No Response */}
+        <div className='row'>
+          <div className='col-12'>
+            <h1 className='center text-center'>jobtrakkr - a place to track your job applications.</h1>
+            <hr/>
+            <h4 className='center text-center'>Jobs I've Applied to</h4>
+          </div>
+        </div>
         <div className='container border border-secondary rounded center'>
           <div className='row'>
-            <div className='col-12'>
-              <h4>Jobs I've Applied to</h4>
-            </div>
-          </div>
-          <div className='row'>
-            <div className='col-xs-12 center text-center'>
+            <div className='center text-center'>
               <Table dark responsive striped bordered hover>
                 <thead>
                   <tr>
@@ -189,16 +190,17 @@ class App extends Component {
           </div>
         </div>
 
-        <hr/>
+        <br/>
+
         {/* Applied jobs - first round interview */}
-        <div className='container border border-secondary rounded center'>
           <div className='row'>
             <div className='col-12'>
-              <h4>Accepted for First Round</h4>
+              <h4 className='col-xs-12 center text-center'>Accepted for First Round</h4>
             </div>
           </div>
+        <div className='container border border-secondary rounded center'>
           <div className='row'>
-            <div className='col-xs-12 center text-center'>
+            <div className='center text-center'>
               <Table dark responsive striped bordered hover>
                 <thead>
                   <tr>
@@ -221,14 +223,15 @@ class App extends Component {
           </div>
         </div>
 
-        <hr/>
+        <br/>
+
         {/* Applied jobs - second round interview */}
-        <div className='container border border-secondary rounded center'>
           <div className='row'>
             <div className='col-12'>
-              <h4>Accepted for Second Round</h4>
+              <h4 className='center text-center'>Accepted for Second Round</h4>
             </div>
           </div>
+        <div className='container border border-secondary rounded center'>
           <div className='row'>
             <div className='col-xs-12 center text-center'>
               <Table dark responsive striped bordered hover>
