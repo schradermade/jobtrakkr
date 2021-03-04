@@ -6,44 +6,45 @@ import { faThumbsUp, faThumbsDown, faGlobe, faMoneyCheckAlt, faSearchDollar, faF
 class App extends Component {
   state = {
     isLoading : false,
-    jobs : [
-      {
-        "id" : "1",
-        "CompanyName" : "Ebay",
-        "JobTitle" : "Sales",
-        "Location" : "California",
-        "WhereWork": "remote",
-        "JobLink" : "https://www.ebay.com",
-        "CoverLetterLink" : "https://docs.google.com/document/d/1kreMCCgfnh947-n8DB29ExRcF3MeL29ZCQmodDn3ltk/edit?usp=sharing",
-        "ResumeLink" : "https://www.google.com",
-        "Status" : "pending"
-      },
-
-      {
-        "id" : "2",
-        "CompanyName" : "Reddit",
-        "JobTitle" : "Moderator",
-        "Location" : "Washington",
-        "WhereWork": "onsite",
-        "JobLink" : "https://www.reddit.com",
-        "CoverLetterLink" : "https://docs.google.com/document/d/1kreMCCgfnh947-n8DB29ExRcF3MeL29ZCQmodDn3ltk/edit?usp=sharing",
-        "ResumeLink" : "https://www.google.com",
-        "Status" : "pending"
-      },
-
-      {
-        "id" : "3",
-        "CompanyName" : "Amazon",
-        "JobTitle" : "Sorter",
-        "Location" : "Oregon",
-        "WhereWork": "remote",
-        "JobLink" : "https://www.amazon.com",
-        "CoverLetterLink" : "https://docs.google.com/document/d/1kreMCCgfnh947-n8DB29ExRcF3MeL29ZCQmodDn3ltk/edit?usp=sharing",
-        "ResumeLink" : "https://www.google.com",
-        "Status" : "pending"
-      }
-    ]
+    jobs : []
   }
+      // {
+      //   "id" : "1",
+      //   "CompanyName" : "Ebay",
+      //   "JobTitle" : "Sales",
+      //   "Location" : "California",
+      //   "WhereWork": "remote",
+      //   "JobLink" : "https://www.ebay.com",
+      //   "CoverLetterLink" : "https://docs.google.com/document/d/1kreMCCgfnh947-n8DB29ExRcF3MeL29ZCQmodDn3ltk/edit?usp=sharing",
+      //   "ResumeLink" : "https://www.google.com",
+      //   "Status" : "pending"
+      // },
+
+      // {
+      //   "id" : "2",
+      //   "CompanyName" : "Reddit",
+      //   "JobTitle" : "Moderator",
+      //   "Location" : "Washington",
+      //   "WhereWork": "onsite",
+      //   "JobLink" : "https://www.reddit.com",
+      //   "CoverLetterLink" : "https://docs.google.com/document/d/1kreMCCgfnh947-n8DB29ExRcF3MeL29ZCQmodDn3ltk/edit?usp=sharing",
+      //   "ResumeLink" : "https://www.google.com",
+      //   "Status" : "pending"
+      // },
+
+      // {
+      //   "id" : "3",
+      //   "CompanyName" : "Amazon",
+      //   "JobTitle" : "Sorter",
+      //   "Location" : "Oregon",
+      //   "WhereWork": "remote",
+      //   "JobLink" : "https://www.amazon.com",
+      //   "CoverLetterLink" : "https://docs.google.com/document/d/1kreMCCgfnh947-n8DB29ExRcF3MeL29ZCQmodDn3ltk/edit?usp=sharing",
+      //   "ResumeLink" : "https://www.google.com",
+      //   "Status" : "pending"
+      // }
+    
+  
 
   remove(id) {
     let updatedJobs = [...this.state.jobs].filter (i => i.id !== id)
@@ -80,6 +81,12 @@ class App extends Component {
     job[0].Status = "secondRound";
     let updatedJobs = [...this.state.jobs];
     this.setState({jobs : updatedJobs });
+  }
+
+  async componentDidMount() {
+    const response = await fetch('https://r9w3mbyi4l.execute-api.us-east-1.amazonaws.com/Development');
+    const body = await response.json();
+    this.setState({ jobs:body, isLoading:false })
   }
 
   render() {
