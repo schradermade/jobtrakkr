@@ -84,7 +84,7 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    const response = await fetch('https://r9w3mbyi4l.execute-api.us-east-1.amazonaws.com/Development');
+    const response = await fetch('https://ykj97o48ek.execute-api.us-west-2.amazonaws.com/development');
     const body = await response.json();
     this.setState({ jobs:body, isLoading:false })
   }
