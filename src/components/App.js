@@ -160,7 +160,7 @@ class App extends Component {
         <div className='container border border-secondary rounded center'>
           <div className='row'>
             <div className='col-12'>
-              <h4>Pending Application Response</h4>
+              <h4>Jobs I've Applied to</h4>
             </div>
           </div>
           <div className='row'>
