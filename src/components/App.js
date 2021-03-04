@@ -100,7 +100,8 @@ class App extends Component {
         <div>Loading...</div>
       );
     }
-
+    <h1>jobtrakkr - a place to track your job applications.</h1>
+    // Applied jobs - No Response
     let jobs = 
     allJobs.map(job => {
       if (job.Status === "pending") {
@@ -118,7 +119,7 @@ class App extends Component {
         }
       }
     )
-    
+    // Applied jobs - first round interview
     let jobs2 = 
     firstRoundJobs.map(job => {
       if (job.Status === "firstRound") {
@@ -136,7 +137,7 @@ class App extends Component {
         }
       }
     )
-
+    // Applied jobs - second round interview
     let jobs3 = 
     secondRoundJobs.map(job => {
       if (job.Status === "secondRound") {
@@ -157,6 +158,7 @@ class App extends Component {
 
     return ( 
       <>
+        {/* Applied jobs - No Response */}
         <div className='container border border-secondary rounded center'>
           <div className='row'>
             <div className='col-12'>
@@ -188,7 +190,7 @@ class App extends Component {
         </div>
 
         <hr/>
-
+        {/* Applied jobs - first round interview */}
         <div className='container border border-secondary rounded center'>
           <div className='row'>
             <div className='col-12'>
@@ -220,7 +222,7 @@ class App extends Component {
         </div>
 
         <hr/>
-
+        {/* Applied jobs - second round interview */}
         <div className='container border border-secondary rounded center'>
           <div className='row'>
             <div className='col-12'>
